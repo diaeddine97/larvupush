@@ -10,6 +10,17 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ReplyController extends Controller
 {
+
+    /**
+     * Create a new AuthController instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('jwt', ['except' => ['index', 'show']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -75,7 +86,7 @@ class ReplyController extends Controller
     public function update(Question $question, Request $request, Reply $reply)
     {
         $reply->update($request->all());
-        return response('Updated', Response::HTTP_ACCEPTED); 
+        return response('Updated', Response::HTTP_ACCEPTED);
     }
 
     /**
