@@ -4,33 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Larvupush</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
     <div id="app">
         <v-app>
-            <v-card color="grey lighten-4" flat height="200px" tile>
-                <v-toolbar dense>
-                    <v-app-bar-nav-icon></v-app-bar-nav-icon>
+            <app-home>
 
-                    <v-toolbar-title>Title</v-toolbar-title>
-
-                    <v-spacer></v-spacer>
-
-                    <v-btn icon>
-                        <v-icon>mdi-magnify</v-icon>
-                    </v-btn>
-
-                    <v-btn icon>
-                        <v-icon>mdi-heart</v-icon>
-                    </v-btn>
-
-                    <v-btn icon>
-                        <v-icon>mdi-dots-vertical</v-icon>
-                    </v-btn>
-                </v-toolbar>
-            </v-card>
+            </app-home>
         </v-app>
     </div>
 
