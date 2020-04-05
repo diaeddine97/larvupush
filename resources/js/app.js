@@ -15,7 +15,7 @@ window.Vue = require('vue');
 window.Vue.use( Vuetify );
 
 window.User = User;
-console.log(User.id())
+window.EventBus = new Vue();
 
 /**
  * The following block of code may be used to automatically register your

@@ -27,6 +27,14 @@
                     Login
                 </v-btn>
 
+                <v-btn
+                    color="info"
+                    class="mr-4"
+                    to="/signup"
+                >
+                    Signup
+                </v-btn>
+
             </v-form>
         </v-container>
     </div>
@@ -43,9 +51,15 @@ export default {
             }
         }
     },
+    created(){
+        if(User.loggedIn()){
+           this.$router.push( { name: 'forum' } );
+        }
+    },
     methods:{
         login(){
-            User.login(this.form);
+            User.login(this.form, this.$router);
+
         }
     }
 };
