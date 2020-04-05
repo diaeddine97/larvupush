@@ -2,6 +2,7 @@
     <div>
         <v-container grid-list-xs>
             <v-form ref="form" @submit.prevent="login">
+                <!-- prevent default submit and go to method login -->
                 <v-text-field
                     v-model="form.email"
                     label="E-mail"
@@ -32,6 +33,7 @@
 </template>
 
 <script>
+
 export default {
     data(){
         return {
@@ -43,9 +45,7 @@ export default {
     },
     methods:{
         login(){
-            axios.post('/api/auth/login',this.form)
-                .then(res => console.log(res.data))
-                .catch(error => console.log(error.response.data))
+            User.login(this.form);
         }
     }
 };

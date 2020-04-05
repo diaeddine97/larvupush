@@ -5,12 +5,17 @@
  */
 
 require('./bootstrap');
+
 import Vuetify from 'vuetify';
 import router from './Router/router.js';
+import User from "./Helpers/User";
+
 
 window.Vue = require('vue');
+window.Vue.use( Vuetify );
 
-Vue.use( Vuetify );
+window.User = User;
+console.log(User.id())
 
 /**
  * The following block of code may be used to automatically register your
@@ -33,7 +38,11 @@ Vue.component('AppHome', require('./components/AppHome.vue').default);
 
 const app = new Vue({
     el: '#app',
-    vuetify: new Vuetify(),
+    vuetify: new Vuetify({
+        // icons: {
+        //     iconfont: 'mdi', // 'mdi' || 'mdiSvg' || 'md' || 'fa' || 'fa4' || 'faSvg'
+        // },
+    }),
     router,
 });
 
